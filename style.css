@@ -1,0 +1,112 @@
+/* Base styles (mobile-first) */
+:root {
+    --clr-dark: hsl(212, 21%, 14%);
+    --clr-gray: hsl(228, 12%, 48%);
+    --clr-green: hsl(158, 36%, 37%);
+    --clr-bg: hsl(30, 38%, 92%);
+    --ff-main: 'Segoe UI', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-main);
+    background-color: var(--clr-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image img {
+    width: 100%;
+    display: block;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.category {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: var(--clr-gray);
+    font-size: 0.8rem;
+}
+
+.title {
+    font-size: clamp(1.4rem, 1rem + 1vw, 2rem);
+    color: var(--clr-dark);
+    margin: 0.75rem 0;
+}
+
+.description {
+    color: var(--clr-gray);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.price-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.current-price {
+    color: var(--clr-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.old-price {
+    color: var(--clr-gray);
+    text-decoration: line-through;
+}
+
+.btn {
+    background: var(--clr-green);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: hsl(158, 36%, 27%);
+}
+
+/* Larger screens (tablet/desktop) */
+@media (min-width: 48em) {
+    .card {
+        flex-direction: row;
+    }
+
+    .card-image,
+    .card-content {
+        flex: 1;
+    }
+
+    .card-content {
+        padding: 2rem;
+    }
+}
